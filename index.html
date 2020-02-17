@@ -12,11 +12,14 @@ form button { width: 9%; background: rgb(130, 224, 255); border: none; padding: 
 	</head>
 	<body>
 		<input type="button" value="Send command" onclick="sendCommand()"/>
+		<input id="cmdChc" type="text"/>
+		<input id="powChc" type="range" min="1" max="100" value="50"/>
 	<script src="/socket.io.js"></script>
+	<script src="/virtualjoystick.js"></script>
 	<script>
 		function sendCommand() {
 			var socket=io.connect('http://192.168.4.1:5000');
-			socket.emit('command', 'test');
+			socket.emit('command', document.getElementById("cmdChc").value, document.getElementById("powChc").value);
 		}
 	</script>
 	</body>
