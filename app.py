@@ -4,7 +4,7 @@ from flask_socketio import SocketIO
 import rccar
 
 app = Flask(__name__)
-socketio = SocketIO(app)
+socketio = SocketIO(app, cors_allowed_origins="*")
 
 @socketio.on('command')
 def on_command(cmd, power):

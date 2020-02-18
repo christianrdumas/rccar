@@ -1,0 +1,5 @@
+#!/bin/bash
+
+echo "cd ~/rccar" >> ~/.bashrc
+echo "python app.py &" >> ~/.bashrc
+echo "cd -" >> ~/.bashrc
